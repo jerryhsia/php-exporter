@@ -1,0 +1,14 @@
+{
+    "name": "jerryhsia/php-exporter",
+    "description": "Export data to a file",
+    "require": {
+        "phpoffice/phpexcel": "~1.8"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jerry Hsia",
+            "email": "xiajie9916@gmail.com"
+        }
+    ]
+}
