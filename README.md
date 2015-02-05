@@ -8,7 +8,7 @@ A library for exporting data to file
 ## JsonExporter
 
 Field|Type|Description
----------------------|---------------
+-----------|----------|---------------
 **filename**|String|REQUIRED - The exported file name
 **data**|Array|REQUIRED - The source data
 **fileDir**|String|OPTIONAL - The directory path to exported file
@@ -16,7 +16,7 @@ Field|Type|Description
 
 ### Usage
 
-```
+```php
 <?php
 $source = [
     ['name' => 'Jerry Hsia', 'gender' => 'male', 'age' => 23],
