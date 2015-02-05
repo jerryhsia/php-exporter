@@ -4,8 +4,8 @@ namespace jerryhsia;
 /**
  * Class BaseExporter
  *
- * @property string $filename
- * @property string $fileDir
+ * @property string $filename The exported file name
+ * @property string $fileDir The directory path to exported file
  *
  * @author Jerry Hsia<xiajie9916@gmail.com>
  */
@@ -16,7 +16,7 @@ abstract class BaseExporter {
     public function __construct(array $config)
     {
         $this->_config = $config;
-        if (empty($this->filename)) {
+        if (!$this->filename) {
             throw new \Exception('The \'filename\' param required');
         }
 
@@ -56,7 +56,7 @@ abstract class BaseExporter {
 
     public function getFileDir()
     {
-        $dir = $this->fileDir ? $this->fileDir : __DIR__.DIRECTORY_SEPARATOR.'_dir';
+        $dir = $this->fileDir ? $this->fileDir : __DIR__.DIRECTORY_SEPARATOR.'.data';
         return $this->createDir($dir);
     }
 

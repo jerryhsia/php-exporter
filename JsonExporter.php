@@ -16,7 +16,7 @@ class JsonExporter extends BaseExporter {
     {
         $this->_config = $config;
 
-        if (is_array($this->data) || !$this->data) {
+        if (!is_array($this->data) || !$this->data) {
             throw new \Exception('Data invalid');
         }
 
@@ -46,7 +46,7 @@ class JsonExporter extends BaseExporter {
         $handle = fopen($this->getFilePath(), 'w+');
 
         fwrite($handle, $data);
-        fclose($data);
+        fclose($handle);
 
         return $this->getFilePath();
     }

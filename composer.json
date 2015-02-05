@@ -1,9 +1,6 @@
 {
     "name": "jerryhsia/php-exporter",
     "description": "Export data to a file",
-    "require": {
-        "phpoffice/phpexcel": "~1.8"
-    },
     "license": "MIT",
     "authors": [
         {
@@ -11,6 +8,12 @@
             "email": "xiajie9916@gmail.com"
         }
     ],
+    "require": {
+        "php": ">=5.4.0",
+        "phpoffice/phpexcel": "~1.8"
+    },
+    "require-dev": {
+    },
     "autoload": {
         "psr-4": {
             "jerryhsia\\": ""
