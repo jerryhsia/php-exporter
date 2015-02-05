@@ -33,6 +33,9 @@ abstract class BaseExporter {
         $this->_config[$name] = $value;
     }
 
+    /**
+     * Fix file name
+     */
     protected function fixFilename()
     {
         $this->filename = str_replace("/", "-", $this->filename);
@@ -40,6 +43,13 @@ abstract class BaseExporter {
         $this->filename = str_replace(' ', '-', $this->filename);
     }
 
+    /**
+     * Create a dir
+     *
+     * @param $dir
+     * @return mixed
+     * @throws \Exception
+     */
     protected function createDir($dir)
     {
         $success = true;
@@ -54,17 +64,34 @@ abstract class BaseExporter {
         return $dir;
     }
 
+    /**
+     * The directory path to exported file
+     *
+     * @return mixed
+     * @throws \Exception
+     */
     public function getFileDir()
     {
         $dir = $this->fileDir ? $this->fileDir : __DIR__.DIRECTORY_SEPARATOR.'.data';
         return $this->createDir($dir);
     }
 
+    /**
+     * The full path to exported file
+     *
+     * @return mixed
+     * @throws \Exception
+     */
     public function getFilePath()
     {
         return $this->getFileDir().DIRECTORY_SEPARATOR.$this->filename;
     }
 
+    /**
+     * Get the file extension
+     *
+     * @return mixed|string
+     */
     public function getFileExtension()
     {
         if (($ext = pathinfo($this->filename, PATHINFO_EXTENSION)) !== '') {
@@ -75,8 +102,18 @@ abstract class BaseExporter {
         }
     }
 
+    /**
+     * Create the exporting file
+     *
+     * @return string The path to the exported file
+     */
     abstract function createFile();
 
+    /**
+     * Send file to browser
+     *
+     * @throws \Exception
+     */
     public function send()
     {
         $createdFile = $this->createFile();

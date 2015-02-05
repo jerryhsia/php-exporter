@@ -4,8 +4,8 @@ namespace jerryhsia;
 /**
  * Class JsonExporter
  *
- * @property array $fields
- * @property array $data
+ * @property array $fields The fields allowed to export
+ * @property array $data The source data
  *
  * @author Jerry Hsia<xiajie9916@gmail.com>
  */
