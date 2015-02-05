@@ -1,7 +1,6 @@
 <?php
 
-
-use jerryhsia\BaseExporter;
+namespace jerryhsia;
 /**
  * Class JsonExporter
  *
@@ -18,7 +17,7 @@ class JsonExporter extends BaseExporter {
         $this->_config = $config;
 
         if (is_array($this->data) || !$this->data) {
-            throw new Exception('Data invalid');
+            throw new \Exception('Data invalid');
         }
 
         parent::__construct($config);
