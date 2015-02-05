@@ -77,7 +77,7 @@ abstract class BaseExporter {
 
     abstract function createFile();
 
-    protected function send()
+    public function send()
     {
         $createdFile = $this->createFile();
         if (file_exists($createdFile)) {
