@@ -1,6 +1,8 @@
 {
     "name": "jerryhsia/php-exporter",
-    "description": "Export data to a file",
+    "description": "A library for exporting data to file",
+    "homepage": "https://github.com/jerryhsia/php-exporter",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
