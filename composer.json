@@ -10,5 +10,10 @@
             "name": "Jerry Hsia",
             "email": "xiajie9916@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-0": {
+            "jerryhsia": "./"
+        }
+    }
 }
