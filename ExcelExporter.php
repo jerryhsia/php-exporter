@@ -153,11 +153,10 @@ class ExcelExporter extends BaseExporter {
         }
     }
 
-    protected function parseRow($data)
+    protected function parseRow($row)
     {
-        $row = $data;
         if ($this->filter) {
-            $row = call_user_func($this->filter, $data, $row);
+            $row = call_user_func($this->filter, $row);
         }
         if ($this->fields) {
             $arr = [];
