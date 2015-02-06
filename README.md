@@ -11,8 +11,9 @@ Field|Type|Description
 -----------|----------|---------------
 **filename**|String|REQUIRED - The exported file name
 **data**|Array|REQUIRED - The source data
-**fileDir**|String|OPTIONAL - The directory path to exported file
+**outputPath**|String|OPTIONAL - The directory path to exported file
 **fields**|Array|OPTIONAL - The fields allowed to export
+**keepFile**|Boolean|OPTIONAL - Whether to keep the file after export
 
 ### Usage
 
@@ -41,8 +42,9 @@ Field|Type|Description
 -----------|----------|---------------
 **filename**|String|REQUIRED - The exported file name
 **data**|Array|REQUIRED - The source data
-**fileDir**|String|OPTIONAL - The directory path to exported file
+**outputPath**|String|OPTIONAL - The directory path to exported file
 **fields**|Array|OPTIONAL - The fields allowed to export
+**keepFile**|Boolean|OPTIONAL - Whether to keep the file after export
 **title**|String|OPTIONAL - The title of table
 **leftBar**|String|OPTIONAL - The left bar text
 **rightBar**|String|OPTIONAL - The right bar text
@@ -58,13 +60,17 @@ $source = [
 
 $fields = [
     'name' => 'Name',
-    'age' => 'Age'
+    'age' => 'Age',
+    'gender' => 'Gender',
 ];
 
 $exporter = new ExcelExporter([
     'filename' => 'test.xls',
     'fields' => $fields,
-    'data' => $source
+    'data' => $source,
+    'title' => 'Title',
+    'leftBar' => 'Left Bar Text',
+    'rightBar' => 'Right Bar Text'
 ]);
 
 $file = $exporter->createFile(); // Save file to the disk

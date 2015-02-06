@@ -5,7 +5,8 @@ namespace jerryhsia;
  * Class BaseExporter
  *
  * @property string $filename The exported file name
- * @property string $fileDir The directory path to exported file
+ * @property string $outputPath The directory path to exported file
+ * @property boolean $keepFile Whether to keep the file after export
  *
  * @author Jerry Hsia<xiajie9916@gmail.com>
  */
@@ -70,7 +71,7 @@ abstract class BaseExporter {
      * @return mixed
      * @throws \Exception
      */
-    public function getFileDir()
+    public function getOutputPath()
     {
         $dir = $this->fileDir ? $this->fileDir : __DIR__.DIRECTORY_SEPARATOR.'.data';
         return $this->createDir($dir);
@@ -84,7 +85,7 @@ abstract class BaseExporter {
      */
     public function getFilePath()
     {
-        return $this->getFileDir().DIRECTORY_SEPARATOR.$this->filename;
+        return $this->getOutputPath().DIRECTORY_SEPARATOR.$this->filename;
     }
 
     /**
@@ -133,7 +134,10 @@ abstract class BaseExporter {
             $handle = fopen($createdFile, 'rb');
             echo fread($handle, filesize($createdFile));
             fclose($handle);
-            @unlink($createdFile);
+            if (!$this->keepFile) {
+                @unlink($createdFile);
+            }
+            exit;
         } else {
             throw new \Exception('Failed to create file');
         }

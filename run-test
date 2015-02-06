@@ -1,0 +1,3 @@
+#! /bin/bash
+phpunit tests/JsonExporterTest.php
+phpunit tests/ExcelExporterTest.php

@@ -20,5 +20,13 @@
         "psr-4": {
             "jerryhsia\\": ""
         }
+    },
+    "extra": {
+        "writable": [
+            "output"
+        ],
+        "executable": [
+            "run-test"
+        ]
     }
 }
