@@ -25,12 +25,17 @@ class ExcelExporter extends BaseExporter {
             throw new \Exception('Data invalid');
         }
 
+        if (!in_array($this->getFileExtension(), ['xls', 'xlsx'])) {
+            throw new \Exception('The file extension should be one of xls, xlsx');
+        }
+
         parent::__construct($config);
     }
 
     protected static $typeMap = [
         'xls' => 'Excel5',
         'xlsx' => 'Excel2007',
+        'pdf' => 'PDF'
     ];
 
     protected $currentRow = 1;
@@ -192,6 +197,7 @@ class ExcelExporter extends BaseExporter {
         $this->getPHPExcel()->getActiveSheet()->setTitle($title);
         $this->getPHPExcel()->setActiveSheetIndex(0);
         $this->writeData();
+
         return \PHPExcel_IOFactory::createWriter($this->getPHPExcel(), self::$typeMap[$this->getFileExtension()]);
     }
 

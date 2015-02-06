@@ -101,7 +101,7 @@ abstract class BaseExporter {
             return strtolower($ext);
         } else {
             $fileInfo = explode('.', $this->filename);
-            return end($fileInfo);
+            return strtolower(end($fileInfo));
         }
     }
 

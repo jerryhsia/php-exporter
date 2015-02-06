@@ -20,6 +20,10 @@ class JsonExporter extends BaseExporter {
             throw new \Exception('Data invalid');
         }
 
+        if ($this->getFileExtension() != 'json') {
+            throw new \Exception('The file extension should be \'json\'');
+        }
+
         parent::__construct($config);
     }
 
