@@ -14,6 +14,8 @@ abstract class BaseExporter {
 
     protected $_config = [];
 
+    protected static $_default_output_dir = 'output';
+
     public function __construct(array $config)
     {
         $this->_config = $config;
@@ -73,7 +75,7 @@ abstract class BaseExporter {
      */
     public function getOutputPath()
     {
-        $dir = $this->fileDir ? $this->fileDir : __DIR__.DIRECTORY_SEPARATOR.'.data';
+        $dir = $this->fileDir ? $this->fileDir : __DIR__.DIRECTORY_SEPARATOR.self::$_default_output_dir;
         return $this->createDir($dir);
     }
 
