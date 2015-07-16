@@ -8,7 +8,7 @@ namespace jerryhsia;
  * @property string $outputPath The directory path to exported file
  * @property boolean $keepFile Whether to keep the file after export
  *
- * @author Jerry Hsia<xiajie9916@gmail.com>
+ * @author Jerry Hsia<jerry9916@qq.com>
  */
 abstract class BaseExporter {
 

@@ -13,7 +13,7 @@ use jerryhsia\BaseExporter;
  * @property string $rightBar The right bar text
  *
  * @package jerryhsia
- * @author Jerry Hsia<xiajie9916@gmail.com>
+ * @author Jerry Hsia<jerry9916@qq.com>
  */
 class ExcelExporter extends BaseExporter {
 

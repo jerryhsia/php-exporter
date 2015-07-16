@@ -7,7 +7,7 @@ namespace jerryhsia;
  * @property array $fields The fields allowed to export
  * @property array $data The source data
  *
- * @author Jerry Hsia<xiajie9916@gmail.com>
+ * @author Jerry Hsia<jerry9916@qq.com>
  */
 class JsonExporter extends BaseExporter {
 
